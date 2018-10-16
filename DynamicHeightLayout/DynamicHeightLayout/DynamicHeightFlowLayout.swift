@@ -3,7 +3,7 @@
 //  FeedLayout
 //
 //  Created by N.A Shashank on 15/10/18.
-//  Copyright © 2018 Razorpay. All rights reserved.
+ 
 //
 
 import UIKit
@@ -40,7 +40,9 @@ class DynamicHeightFlowLayout: UICollectionViewFlowLayout {
             assertionFailure("could not get collectionview")
             return
         }
+        // reset attributes because prepare is called multiple times
         self.arrLayoutAttributes.removeAll()
+        self.contentHeight = 0
         var arrXOffsets = [CGFloat](repeating: 0, count: self.noOfColumns)
         var arrYOffsets = [CGFloat](repeating: 0, count: noOfColumns)
         // calculate number of columns based on padding
@@ -52,29 +54,30 @@ class DynamicHeightFlowLayout: UICollectionViewFlowLayout {
         arrXOffsets[0] = self.sectionInset.left
         arrYOffsets[0] = self.sectionInset.top
         // compute the rest respectively
-        for i in 1..<noOfColumns {
+        for i in 1..<self.noOfColumns {
             // next item position = prev item position + item width + padding
             arrXOffsets[i] = arrXOffsets[i-1] + itemWidth + self.padding
             // first item of all columns must begin at postion = sectionInset.top
             arrYOffsets[i] = self.sectionInset.top
         }
-        var column = 0
-        
-        for item in 0..<collectionView.numberOfItems(inSection: 0) {
+        var column = 0 
+        let itemsInSection = collectionView.numberOfItems(inSection: 0)
+        for item in 0..<itemsInSection {
             let indexPath = IndexPath(item: item, section: 0)
             let cellHeight = delegate.heightForItem(at: indexPath)
             let frame = CGRect(x: arrXOffsets[column], y: arrYOffsets[column], width: itemWidth, height: cellHeight)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = frame
             self.arrLayoutAttributes.append(attributes)
-            // add vertical padding only if it is not the last cell
-//            let verticalPadding = (indexPath.item == collectionView.numberOfItems(inSection: 0) - 1) ? 0 : self.padding
-            self.contentHeight = max(self.contentHeight, frame.maxY + self.padding)
-            arrYOffsets[column] = arrYOffsets[column] + cellHeight + self.padding
-            column = (column + 1) %  noOfColumns
+            // add vertical padding only if there is a cell below this cell
+            let verticalPadding = ((item + self.noOfColumns) <= (itemsInSection - 1)) ? self.padding : 0
+            self.contentHeight = max(self.contentHeight, frame.maxY + verticalPadding)
+            arrYOffsets[column] = arrYOffsets[column] + cellHeight + verticalPadding
+            column = (column + 1) %  self.noOfColumns
             // add bottom inset to contentHeight after the last item
-            //self.contentHeight = self.contentHeight + self.sectionInset.bottom
+            self.contentHeight = self.contentHeight + self.sectionInset.bottom
         }
+        
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -86,7 +89,7 @@ class DynamicHeightFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return self.arrLayoutAttributes[indexPath.item]
+        return self.arrLayoutAttributes[indexPath.item]  
     }
     
     
