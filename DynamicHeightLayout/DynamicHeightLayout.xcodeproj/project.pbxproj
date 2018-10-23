@@ -17,6 +17,7 @@
 		A2417A522174774D005F33BF /* DetailItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2417A512174774D005F33BF /* DetailItemModel.swift */; };
 		A2417A5421747942005F33BF /* DetailItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2417A5321747942005F33BF /* DetailItemCell.swift */; };
 		A2417A5821747C57005F33BF /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2417A5721747C57005F33BF /* DynamicHeightFlowLayout.swift */; };
+		A2472F3B217EFE3300F518CF /* ViewController+Conformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2472F3A217EFE3300F518CF /* ViewController+Conformance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A2417A512174774D005F33BF /* DetailItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemModel.swift; sourceTree = "<group>"; };
 		A2417A5321747942005F33BF /* DetailItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemCell.swift; sourceTree = "<group>"; };
 		A2417A5721747C57005F33BF /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
+		A2472F3A217EFE3300F518CF /* ViewController+Conformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Conformance.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				A2417A512174774D005F33BF /* DetailItemModel.swift */,
 				A2417A5321747942005F33BF /* DetailItemCell.swift */,
 				A2417A5721747C57005F33BF /* DynamicHeightFlowLayout.swift */,
+				A2472F3A217EFE3300F518CF /* ViewController+Conformance.swift */,
 			);
 			path = DynamicHeightLayout;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				A2417A5821747C57005F33BF /* DynamicHeightFlowLayout.swift in Sources */,
 				A2417A5421747942005F33BF /* DetailItemCell.swift in Sources */,
 				A2417A26217476BC005F33BF /* ViewController.swift in Sources */,
+				A2472F3B217EFE3300F518CF /* ViewController+Conformance.swift in Sources */,
 				A2417A24217476BC005F33BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

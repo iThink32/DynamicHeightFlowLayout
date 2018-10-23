@@ -12,7 +12,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var arrDataSource = [DetailItemModel(title: "A", backgroundColor: UIColor.red,cellHeight:200),DetailItemModel(title: "B", backgroundColor: UIColor.blue,cellHeight:400),DetailItemModel(title: "C", backgroundColor: UIColor.green,cellHeight:250),DetailItemModel(title: "D", backgroundColor: UIColor.purple,cellHeight:340),DetailItemModel(title: "E", backgroundColor: UIColor.orange,cellHeight:420),DetailItemModel(title: "F", backgroundColor: UIColor.magenta,cellHeight:140)]
+    var arrDataSource = [DetailItemModel(title: "A"),DetailItemModel(title: "B"),DetailItemModel(title: "C"),DetailItemModel(title: "D"),DetailItemModel(title: "E"),DetailItemModel(title: "F")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             return
         }
         feedLayout.delegate = self
+        collectionView.dragInteractionEnabled = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -40,8 +41,28 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     func heightForItem(at indexPath: IndexPath) -> CGFloat {
-        return self.arrDataSource[indexPath.item].cellHeight
+        var height:CGFloat = 0
+        switch indexPath.item {
+        case 0 :
+            height = 170
+        case 1 :
+            height = 150
+        case 2 :
+            height = 179
+        case 3 :
+            height = 350
+        case 4 :
+            height = 379
+        case 5 :
+            height = 300
+        case 6 :
+            height = 192
+        default :
+            height = 100
+        }
+        return height
     }
+
 
 
 }
