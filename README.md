@@ -30,7 +30,7 @@ and then provide the height for each item in the method
 ### Note :
 This repo also contains the drag-drop feature for UICollectionView , have a look at the implementation if needed.
 
-Have a look at the sample gif to get an idea of what you can achieve with this repo
+### Gif time :
 
 ![alt text](https://github.com/iThink32/DynamicHeightFlowLayout/blob/master/DynamicHeightFlowLayout.gif)
 
