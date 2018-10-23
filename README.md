@@ -24,7 +24,26 @@ and then provide the height for each item in the method
 
 ```
     func heightForItem(at indexPath: IndexPath) -> CGFloat {
-        return self.arrDataSource[indexPath.item].cellHeight
+        var height:CGFloat = 0
+        switch indexPath.item {
+        case 0 :
+            height = 170
+        case 1 :
+            height = 150
+        case 2 :
+            height = 179
+        case 3 :
+            height = 350
+        case 4 :
+            height = 379
+        case 5 :
+            height = 300
+        case 6 :
+            height = 192
+        default :
+            height = 100
+        }
+        return height
     }
 ``` 
 ### Note :
