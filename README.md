@@ -30,6 +30,6 @@ and then provide the height for each item in the method
 
 Have a look at the sample gif to get an idea of what you can achieve with this repo
 
-![alt text](https://github.com/iThink32/DynamicHeightFlowLayout/blob/master/DynamicFlowLayout.gif)
+![alt text](https://github.com/iThink32/DynamicHeightFlowLayout/blob/master/DynamicHeightFlowLayout.gif)
 
 
