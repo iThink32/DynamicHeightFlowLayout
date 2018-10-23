@@ -27,6 +27,8 @@ and then provide the height for each item in the method
         return self.arrDataSource[indexPath.item].cellHeight
     }
 ``` 
+### Note :
+This repo also contains the drag-drop feature for UICollectionView , have a look at the implementation if needed.
 
 Have a look at the sample gif to get an idea of what you can achieve with this repo
 
