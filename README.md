@@ -12,7 +12,7 @@ In my project i have set a top/left/bottom/right section inset of 20 and a paddi
 
 Oh ya , one more thing implement the DynamicHeightFlowLayoutDelegate as so
 
-```
+```swift
         guard let feedLayout = self.collectionView.collectionViewLayout as? DynamicHeightFlowLayout else{
             assertionFailure("could not get feed layout")
             return
@@ -22,7 +22,7 @@ Oh ya , one more thing implement the DynamicHeightFlowLayoutDelegate as so
 
 and then provide the height for each item in the method
 
-```
+```swift
     func heightForItem(at indexPath: IndexPath) -> CGFloat {
         var height:CGFloat = 0
         switch indexPath.item {
